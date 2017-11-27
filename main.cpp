@@ -14,22 +14,17 @@
 #include "saisie.h" 
 #include "tableau.h"
 
-   //TODO : DELETE
-   #include <iostream> // Pour les entrées et sorties
-   using namespace std ;
-
 
 int main() {
 
-   int nbElements , nbLances ;
+   int nbElements = 2 , nbLances = 4 ;
    
    //Le programme recommence ou s'arrête selon le choix de l'utilisateur après son execution.
    do
    {
      saisieUtilisateur(nbElements , nbLances ); 
-     //
-     genererValeurAleatoire(nbElements, nbLances) ;
      
+     genererValeurAleatoire( nbElements, nbLances) ;
 
    } while(recommencerProgramme());
    

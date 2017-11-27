@@ -12,19 +12,17 @@ using namespace std ;
 // END TODO
 
 //La valeur min est toujours zéro
-int genererValeursAleatoire( int maxValeur , int nbLances ){
+int genererValeurAleatoire( int nbValeurs , int nbLance ){
    
    int valeur ; 
-   int arrayValeur[nbLances] ;
+   int arrayValeur[nbLance] ;
    
     //Initialisation
    srand(time(0));
    
-    for(int i = 0 ; i < nbLances ; i++  ){
-       valeur = rand() %  maxValeur ;
+    for(int i = 0 ; i < nbLance ; i++  ){
+       valeur = rand() %  nbValeurs ;
        arrayValeur[i] = valeur ;
       }
-
-
-   return valeur ;
+   return 0 ;
 }
