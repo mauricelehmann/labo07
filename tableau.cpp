@@ -6,13 +6,7 @@
 
 #include "tableau.h"
 
-//TODO DELETE : 
-#include <iostream>
-using namespace std ;
-// END TODO
-
-//La valeur min est toujours zéro
-void genererValeurAleatoire( int nbValeurs , int nbLance ){
+void initialisationTableau( int nbValeurs , int nbLance ){
    
    int valeur ; 
    int arrayValeur[nbValeurs] = {} ;
@@ -26,13 +20,35 @@ void genererValeurAleatoire( int nbValeurs , int nbLance ){
        arrayValeur[valeur] += 1 ;
    }
    //Affiche le tableau
-   afficherTableau(arrayValeur , nbValeurs );
+   afficherTableau( arrayValeur , nbValeurs , nbLance );
  
 }
 
-void afficherTableau( int tableau[] , int tailleTableau ){
-     //Affichage du tableau
-   for(int j = 0 ; j < tailleTableau ; j++ ){
-     cout << tableau[j] << endl ;
+void afficherTableau(  int tableau[] , int tailleTableau , int nbLances ){
+   
+   //Affichage du tableau
+   int pourcentage ;
+   
+   for(int indice = 0 ; indice < tailleTableau ; indice++ ){
+      //Calcule pourcentage
+      pourcentage = calculePourcentage( tableau[indice] , nbLances ) ;
+     //Affichage ligne
+     cout << "tableau[" << indice << "]" << setw(5)
+          << pourcentage
+          << setw(4) ;
+     //Afficher la représentation graphique du pourcentage
+     for( int caractere = 0 ; caractere < pourcentage ; caractere ++ ){
+        cout << "#" ;
+     }
+     cout << endl ;
    }
+}
+
+int calculePourcentage( int valeur , int total ){
+   
+   int pourcentage ;
+   //C++ a besoin de type float pour avoir une division précise
+   //Nous retournons quand même un résultat en int , selon le cahier des charges
+   pourcentage = ( (float)valeur/ (float)total )  * 100 ; 
+   return pourcentage ;
 }

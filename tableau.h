@@ -14,13 +14,18 @@
 #ifndef TABLEAU_H
 #define TABLEAU_H
 
-#include <stdio.h>      /* printf, scanf, puts, NULL */
 #include <stdlib.h>     /* srand, rand */
 #include <time.h>       /* time */
+#include <iostream>     /* cout */
+#include <iomanip>      /* setw */
 
 using namespace std ;
 
-void genererValeurAleatoire( int nbValeurs , int nbLance );
-void afficherTableau( int tableau[] , int tailleTableau );
+//TODO
+void afficherTableau( int tableau[] , int tailleTableau , int nbLances  );
+//TODO
+int calculePourcentage( int valeur , int total );
+
+
 #endif /* TABLEAU_H */
 

@@ -17,18 +17,31 @@
 
 int main() {
 
-   int nbElements = 2 , nbLances = 4 ;
-   
+   int nbElements , nbLances ;
+
    //Le programme recommence ou s'arrête selon le choix de l'utilisateur après son execution.
    do
    {
-     saisieUtilisateur(nbElements , nbLances ); 
-     
-     genererValeurAleatoire( nbElements, nbLances) ;
+      
+      saisieUtilisateur( nbElements , nbLances );
+          
+      int valeur ; 
+      int arrayValeur[nbElements] = {} ;
 
+      //Initialisation du random
+      srand(time(0));
+   
+      //Remplissage du tableau en fonction des valeurs aléatoires
+      for(int i = 0 ; i < nbLances ; i++  ){
+         valeur = rand() %  nbElements ;
+         arrayValeur[valeur] += 1 ;
+      }
+      
+      //Affichage du tableau
+      afficherTableau(arrayValeur , nbElements , nbLances );
+ 
    } while(recommencerProgramme());
    
    return EXIT_SUCCESS;
-   
 }
 
