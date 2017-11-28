@@ -1,15 +1,16 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+ -----------------------------------------------------------------------------------
+ Laboratoire : 07
+ Fichier     : tableau.h
+ Auteur(s)   : Maurice Lehmann et Nicolas Hungerbühler
+ Date        : 28.11.2017
 
-/* 
- * File:   tableau.h
- * Author: mle
+ But         : Déclaration des fonctions utiles à la génération du tableau
+ *             
  *
- * Created on 27. novembre 2017, 10:38
- */
+ Compilateur : MinGW-g++ 6.3.0
+ -----------------------------------------------------------------------------------
+*/
 
 #ifndef TABLEAU_H
 #define TABLEAU_H
@@ -21,11 +22,27 @@
 
 using namespace std ;
 
-//TODO
+/**
+ * 
+ * @param tableau , tableau à afficher
+ * @param tailleTableau , nombre d'élements du tableau
+ * @param nbLances , nombre de lancés effectué. Utilisé pour faire le pourcentage
+ */
 void afficherTableau( int tableau[] , int tailleTableau , int nbLances  );
-//TODO
+/**
+ * 
+ * @param valeur , valeur initiale
+ * @param total , nombre total de lancés
+ * @return Pourcentage , en type int
+ */
 int calculePourcentage( int valeur , int total );
-
+/**
+ * 
+ * @param tab , tableau à remplire
+ * @param tailleTableau , taille du tableau
+ * @param nbLances , nombre de lancés total
+ */
+void remplireTableau( int tab[] , int tailleTableau , int nbLances );
 
 #endif /* TABLEAU_H */
 

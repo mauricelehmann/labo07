@@ -1,30 +1,20 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+ -----------------------------------------------------------------------------------
+ Laboratoire : 07
+ Fichier     : tableau.cpp
+ Auteur(s)   : Maurice Lehmann et Nicolas Hungerbühler
+ Date        : 28.11.2017
+
+ But         : Contient les fonctions utilisée pour la génération du tableau
+ *             
+ *
+ Compilateur : MinGW-g++ 6.3.0
+ -----------------------------------------------------------------------------------
+*/
 
 #include "tableau.h"
 
-void initialisationTableau( int nbValeurs , int nbLance ){
-   
-   int valeur ; 
-   int arrayValeur[nbValeurs] = {} ;
-
-    //Initialisation
-   srand(time(0));
-   
-   //Remplissage du tableau
-   for(int i = 0 ; i < nbLance ; i++  ){
-       valeur = rand() %  nbValeurs ;
-       arrayValeur[valeur] += 1 ;
-   }
-   //Affiche le tableau
-   afficherTableau( arrayValeur , nbValeurs , nbLance );
- 
-}
-
-void afficherTableau(  int tableau[] , int tailleTableau , int nbLances ){
+void afficherTableau( int tableau[] , int tailleTableau ,int nbLances ){
    
    //Affichage du tableau
    int pourcentage ;
@@ -32,14 +22,17 @@ void afficherTableau(  int tableau[] , int tailleTableau , int nbLances ){
    for(int indice = 0 ; indice < tailleTableau ; indice++ ){
       //Calcule pourcentage
       pourcentage = calculePourcentage( tableau[indice] , nbLances ) ;
-     //Affichage ligne
+     //Affichage d'une ligne
      cout << "tableau[" << indice << "]" << setw(5)
           << pourcentage
+          //Espace entre les pourcentages et leurs représentation graphique
           << setw(4) ;
+     
      //Afficher la représentation graphique du pourcentage
      for( int caractere = 0 ; caractere < pourcentage ; caractere ++ ){
         cout << "#" ;
      }
+     //Mise à la ligne
      cout << endl ;
    }
 }
@@ -51,4 +44,18 @@ int calculePourcentage( int valeur , int total ){
    //Nous retournons quand même un résultat en int , selon le cahier des charges
    pourcentage = ( (float)valeur/ (float)total )  * 100 ; 
    return pourcentage ;
+}
+
+void remplireTableau( int tab[] , int tailleTableau , int nbLances ){
+   
+   int valeur ;
+   //Initialisation du random
+   srand(time(0));
+   
+   //Remplissage du tableau en fonction des valeurs aléatoires
+   for(int i = 0 ; i < nbLances ; i++  ){
+         //Fix la valeur du random entre 0 et la taille du tableau
+         valeur = rand() %  tailleTableau ;
+         tab[valeur] += 1 ;
+      }
 }

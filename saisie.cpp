@@ -1,20 +1,35 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+ -----------------------------------------------------------------------------------
+ Laboratoire : 07
+ Fichier     : saisie.cpp
+ Auteur(s)   : Maurice Lehmann et Nicolas Hungerbühler
+ Date        : 28.11.2017
+
+ But         : Contient les fonctions utilisée pour la saisie utilisateur
+ *
+ Compilateur : MinGW-g++ 6.3.0
+ -----------------------------------------------------------------------------------
+*/
 
 #include "saisie.h"
 
 bool saisieUtilisateur( int& nbElement, int& nbLances )
 {
+   
    bool saisieCorrect = false ;
+   //Variables entrées par l'utilisateur
    int elementsUtilisateur , lancesUtilisateur ;
+   //On recommence tant que la saisie n'est pas correcte
    do
    {      
-      cout << "Entrez le nombre d element : " << endl ;
+      cout << "Entrez le nombre d element [" 
+      << MIN_ELEMENT << " - " << MAX_ELEMENT << "]" << endl ;
+      
       cin >> elementsUtilisateur ; 
-      cout << "Entrez le nombre de lances : " << endl ;
+      
+      cout << "Entrez le nombre de lances ["
+              << MIN_LANCES << " - " << MAX_LANCES << "]" << endl ;
+       
       cin >> lancesUtilisateur ;
 
       if(!cin.fail()){

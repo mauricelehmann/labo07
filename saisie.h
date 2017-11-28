@@ -1,15 +1,18 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+ -----------------------------------------------------------------------------------
+ Laboratoire : 07
+ Fichier     : saisie.h
+ Auteur(s)   : Maurice Lehmann et Nicolas Hungerbühler
+ Date        : 28.11.2017
 
-/* 
- * File:   saisie.h
- * Author: mle
+ But         : Déclaration des fonctions utilisée pour la saisie utilisateur
+ *             Déclaration des constantes qui vérifient la saisie utilisateur
+ *             Define du VIDER_BUFFER
  *
- * Created on 27. novembre 2017, 10:36
- */
+ Compilateur : MinGW-g++ 6.3.0
+ -----------------------------------------------------------------------------------
+*/
+
 
 #ifndef SAISIE_H
 #define SAISIE_H
@@ -29,7 +32,12 @@
    
    
    
-   //TODO Commentaire ! 
+   /**
+    * 
+    * @param nbElement , nombre d'éléments du tableau , ne peut pas dépasser MAX_ELEMENT
+    * @param nbLances , nombre de lancés aléatoire , ne peut pas dépasser MAX_LANCES
+    * @return true si la saisie est correct , sinon false
+    */
    bool saisieUtilisateur( int& nbElement, int& nbLances );
 
    /**
