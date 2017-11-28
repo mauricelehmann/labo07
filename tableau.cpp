@@ -12,17 +12,27 @@ using namespace std ;
 // END TODO
 
 //La valeur min est toujours zéro
-int genererValeurAleatoire( int nbValeurs , int nbLance ){
+void genererValeurAleatoire( int nbValeurs , int nbLance ){
    
    int valeur ; 
-   int arrayValeur[nbLance] ;
-   
+   int arrayValeur[nbValeurs] = {} ;
+
     //Initialisation
    srand(time(0));
    
-    for(int i = 0 ; i < nbLance ; i++  ){
+   //Remplissage du tableau
+   for(int i = 0 ; i < nbLance ; i++  ){
        valeur = rand() %  nbValeurs ;
-       arrayValeur[i] = valeur ;
-      }
-   return 0 ;
+       arrayValeur[valeur] += 1 ;
+   }
+   //Affiche le tableau
+   afficherTableau(arrayValeur , nbValeurs );
+ 
+}
+
+void afficherTableau( int tableau[] , int tailleTableau ){
+     //Affichage du tableau
+   for(int j = 0 ; j < tailleTableau ; j++ ){
+     cout << tableau[j] << endl ;
+   }
 }

@@ -20,7 +20,7 @@
 
 using namespace std ;
 
-int genererValeurAleatoire( int nbValeurs , int nbLance );
-   
+void genererValeurAleatoire( int nbValeurs , int nbLance );
+void afficherTableau( int tableau[] , int tailleTableau );
 #endif /* TABLEAU_H */
 
