@@ -25,7 +25,7 @@ int main() {
    //Le programme recommence ou s'arrête selon le choix de l'utilisateur après son execution.
    do
    {
-      
+      //Comm
       //Saisie utilisateur : taille du tableau et nombre de lancés
       saisieUtilisateur( nbElements , nbLances );
       
