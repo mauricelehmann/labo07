@@ -31,7 +31,8 @@ bool saisieUtilisateur( int& nbElement, int& nbLances )
               << MIN_LANCES << " - " << MAX_LANCES << "]" << endl ;
        
       cin >> lancesUtilisateur ;
-
+      
+      //Si l'utilisateur remplit correctement les champs 
       if(!cin.fail()){
          if(controleSaisie( elementsUtilisateur , MIN_ELEMENT , MAX_ELEMENT , "Nombre d'elements incorrect !")
          and controleSaisie( lancesUtilisateur , MIN_LANCES, MAX_LANCES , "Nombre de lances incorrect !")){
@@ -41,7 +42,6 @@ bool saisieUtilisateur( int& nbElement, int& nbLances )
             nbLances = lancesUtilisateur ;
          }
       }
-   
       VIDER_BUFFER ;
       
    }while(!saisieCorrect) ;
